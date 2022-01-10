@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Todo App居宅サービス計画書</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: none;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        body {
+            font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.4em;
+            background: #f5f5f5;
+            color: #4d4d4d;
+            min-width: 230px;
+            /* max-width: 550px; */
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        #kensyo {
+            position: absolute;
+            left: 0;
+        }
+        .edit-meny {
+            float: right;
+        }
+        #clear-btn {
+            cursor: pointer;
+        }
+        #frmMEM091704 {
+            clear: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kensyo">
+        <div class="edit-meny"><button id="clear-btn">クリア</button></div>
+        <form id="frmMEM091704" method="post">
+            <table id="two-tbl" class="tbl-home02" summary="居宅サービス計画書（２）" border="1">
+                <tbody id="t-body">
+                    <tr>
+                        <th rowspan="2" style="width:2%;">表 &nbsp;<br>示<span class="txt-required-mark">*</span></th>
+                        <th rowspan="2" style="width:10%;">生活全般の解決すべき<br>課題 （ニーズ）</th>
+                        <th colspan="4">目標</th>
+                        <th colspan="6">援助内容</th>
+                    </tr>
+                    <tr>
+                        <th style="width:12%;">長期目標</th>
+                        <th style="width:9%;">期間</th>
+                        <th style="width:12%;">短期目標</th>
+                        <th style="width:9%;">期間</th>
+                        <th style="width:10%;">サービス内容</th>
+                        <th style="width:1%;">*1</th>
+                        <th style="width:11%;">サービス種別</th>
+                        <th style="width:12%;">サービス事業所</th>
+                        <th style="width:5%;">頻度</th>
+                        <th style="width:7%;">期間</th>
+                    </tr>
+                    <tr class="first-tr">
+                        <td class="data">&nbsp;</td>
+                        <td id="fw-td" class="needa">
+                            <a href="add01_need.html">+
+                                項目を追加</a>
+                        </td>
+                        <td id="bk-td" class="data_gr_bottom" colspan="9">&nbsp;</td>
+                        <td class="data_gr_corner">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <script src="./kaipoke.js" type="module"></script>
+
+    </div>
+</body>
+
+</html>
