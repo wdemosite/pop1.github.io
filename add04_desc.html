@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>サービス内容新規追加ページ</title>
+</head>
+
+<body>
+    <p>でもページ</p>
+    <table class="tbl-home02" summary="生活全般の解決すべき課題（ニーズ）">
+        <tbody>
+            <tr>
+                <th rowspan="2" style="width:10%;">生活全般の<br>解決すべき<br>課題（ニーズ）</th>
+                <th colspan="4">目標</th>
+                <th colspan="2">援助内容</th>
+            </tr>
+            <tr>
+                <th style="width:14%;">長期目標</th>
+                <th style="width:5%;">期間</th>
+                <th style="width:14%;">短期目標</th>
+                <th style="width:5%;">期間</th>
+                <th colspan="2">サービス内容</th>
+            </tr>
+            <tr>
+                <td rowspan="2" style="width:84px">
+                    xxxxxxxx
+                </td>
+                <td rowspan="2" style="width:106px">
+                    cccccc
+                </td>
+                <td rowspan="2">
+                    R3.11.01 ～ R3.11.30
+                </td>
+                <td rowspan="2" style="width:106px">
+                    tttttt
+                </td>
+                <td rowspan="2">
+                    R3.11.01 ～ R3.11.30
+                </td>
+                <td class="nowrap r-none" id="form:assistanceSubjectServiceSubject_td">
+                    <textarea name="form:assistanceSubjectServiceSubject" id="form:assistanceSubjectServiceSubject" cols="60" rows="5" class="area-plan2-edit-ss"></textarea><br><span id="assistanceSubjectServiceSubject_length"></span><br>
+                </td>
+                <td class="td-btn l-none">
+                    <a href="#" alt="雛形・例文選択"></a><br>
+                    <a href="#" alt="雛形登録"></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:220px" colspan="2">
+                    ssssss
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script language="javascript" type="text/javascript">
+        function OnLinkClick() {
+            var data = document.getElementById('form:assistanceSubjectServiceSubject').value;
+            let allData = localStorage.getItem('twoTableData');
+            allData = allData ? JSON.parse(allData) : [];
+
+            allData.push({
+                name: 'サービス内容',
+                value: data,
+            });
+            localStorage.setItem('twoTableData', JSON.stringify(allData));
+            location.href = "/kaipoke.html";
+        }
+    </script>
+    <div class="box-btn clearfix">
+        <div class="btn-r clearfix">
+            <span id="kanri_regist_on">
+        <input id="form:accept" onclick="OnLinkClick();" name="form:accept" type="image" alt="登録する">
+      </span>
+            <span id="kanri_regist_off" style="display:none;">
+        <img alt="登録する">
+      </span>
+        </div>
+    </div>
+</body>
+
+</html>

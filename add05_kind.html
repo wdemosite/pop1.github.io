@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>サービス種別新規追加ページ</title>
+</head>
+
+<body>
+    <p>でもページ</p>
+    <table class="tbl-home02" summary="生活全般の解決すべき課題（ニーズ）">
+        <tbody>
+            <tr>
+                <th rowspan="2" style="width:10%;">生活全般の<br>解決すべき<br>課題（ニーズ）</th>
+                <th colspan="4">目標</th>
+                <th colspan="3">援助内容</th>
+            </tr>
+            <tr>
+                <th style="width:14%;">長期目標</th>
+                <th style="width:5%;">期間</th>
+                <th style="width:14%;">短期目標</th>
+                <th style="width:5%;">期間</th>
+                <th style="width:25%;">サービス内容</th>
+                <th style="width:2%;">※１</th>
+                <th>サービス種別</th>
+            </tr>
+            <tr>
+                <td rowspan="2" style="width:84px">
+                    xxxxxxxx
+                </td>
+                <td rowspan="2" style="width:106px">
+                    cccccc
+                </td>
+                <td rowspan="2">
+                    R3.11.01 ～ R3.11.30
+                </td>
+                <td rowspan="2" style="width:106px">
+                    tttttt
+                </td>
+                <td rowspan="2">
+                    R3.11.01 ～ R3.11.30
+                </td>
+                <td rowspan="2" id="form:assistanceSubjectServiceSubject_td">
+                    ssssss
+                </td>
+
+                <td rowspan="1" class="td-center">
+                    <input type="checkbox" name="form:j_id_jsp_1550400962_130" value="true">
+                </td>
+                <td class="nowrap" id="serviceKindInternalId_td">
+                    <input type="radio" value="01" id="service_category01" name="service_category">
+                    <label for="service_category01">介護サービス</label>
+                    <br>
+                    <input type="hidden" id="form:hidServiceKindInternalId" name="form:hidServiceKindInternalId" value=""><select id="form:serviceKindInternalId" name="form:serviceKindInternalId" size="1">
+            <option value="" selected="selected">-</option>
+            <option value="1">居宅介護支援 </option>
+            <option value="59">介護予防ケアマネジメント</option>
+            <option value="15">介護予防支援 </option>
+            <option value="2">訪問介護 </option>
+            <option value="45">訪問みなし</option>
+            <option value="46">訪問独自</option>
+            <option value="7">通所介護</option>
+            <option value="64">地域通所</option>
+            <option value="49">通所みなし</option>
+            <option value="50">通所独自</option>
+            <option value="14">福祉用具</option>
+            <option value="28">予福祉用具</option>
+            <option value="3">訪問入浴</option>
+            <option value="17">予訪問入浴</option>
+            <option value="4">訪問看護 </option>
+            <option value="18">予訪問看護 </option>
+            <option value="5">訪問リハ</option>
+            <option value="19">予訪問リハ</option>
+            <option value="8">通所リハ</option>
+            <option value="22">予通所リハ</option>
+            <option value="6">居宅療養</option>
+            <option value="20">予居宅療養</option>
+            <option value="9">短期生活</option>
+            <option value="23">予短期生活</option>
+            <option value="10">短期療養イ</option>
+            <option value="24">予短期療養イ</option>
+            <option value="11">短期療養ロ</option>
+            <option value="25">予短期療養ロ</option>
+            <option value="12">短期療養ハ</option>
+            <option value="26">予短期療養ハ</option>
+            <option value="13">短期療養ニ</option>
+            <option value="27">予短期療養ニ</option>
+            <option value="68">短期療養ホ</option>
+            <option value="69">予短期療養ホ</option>
+            <option value="32">認知共生短</option>
+            <option value="35">予認知共生短</option>
+            <option value="29">夜間訪問</option>
+            <option value="30">認知通所</option>
+            <option value="33">予認知通所</option>
+            <option value="31">小多機能</option>
+            <option value="34">予小多機能</option>
+            <option value="60">小多機短</option>
+            <option value="61">予小多機短</option>
+            <option value="36">特施生短</option>
+            <option value="37">定期巡回</option>
+            <option value="38">地域特施生短</option>
+            <option value="39">看護小多機能</option>
+            <option value="62">看護小多機短</option>
+          </select>
+                    <br>
+                    <input type="radio" value="02" id="service_category02" name="service_category">
+                    <label for="service_category02">任意サービス</label>
+                    <br>
+                    <input type="hidden" id="form:hidArbitraryServiceName" name="form:hidArbitraryServiceName" value=""><input id="form:arbitraryServiceName" name="form:arbitraryServiceName" type="text" value="" size="40" class="input-nini">
+                    <br>
+                    <input type="radio" value="00" id="service_category03" onclick="preparedDataForActive();" name="service_category" checked="checked">
+                    <label for="service_category03">未選択</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td-center">
+
+                </td>
+                <td>
+                    居宅介護支援&nbsp;
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script language="javascript" type="text/javascript">
+        function OnLinkClick() {
+            var data = document.getElementById('form:arbitraryServiceName').value;
+            let allData = localStorage.getItem('twoTableData');
+            allData = allData ? JSON.parse(allData) : [];
+
+            allData.push({
+                name: 'サービス種別',
+                value: data,
+                value1: document.getElementsByName('form:j_id_jsp_1550400962_130')[0].checked ? '*' : ''
+            });
+            localStorage.setItem('twoTableData', JSON.stringify(allData));
+            location.href = "/kaipoke.html";
+        }
+    </script>
+    <div class="box-btn clearfix">
+        <div class="btn-r clearfix">
+            <span id="kanri_regist_on">
+        <input id="form:accept" name="form:accept" onclick="OnLinkClick()" type="image" alt="登録する">
+      </span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ニーズ新規追加ページ</title>
+</head>
+
+<body>
+    <p>でもページ</p>
+    <table class="tbl-home02" summary="生活全般の解決すべき課題（ニーズ）">
+        <tr>
+            <th colspan="2">生活全般の解決すべき課題（ニーズ）
+            </th>
+        </tr>
+        <tr>
+            <td class="r-none" id="form:needsSubject_td">
+                <textarea id="form:needsSubject" cols="60" rows="5"></textarea><br />
+                <span id="needsSubject_length"></span><br />
+            </td>
+            <td class="td-btn l-none">
+                <table style="border-left-style: none;">
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="雛形検索" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img alt="雛形登録" /></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script language="javascript" type="text/javascript">
+        function OnLinkClick() {
+            var data = document.getElementById('form:needsSubject').value;
+            let allData = localStorage.getItem('twoTableData');
+            allData = allData ? JSON.parse(allData) : [];
+            allData.push({
+                name: 'ニーズ',
+                value: data
+            });
+            localStorage.setItem('twoTableData', JSON.stringify(allData));
+            location.href = "/kaipoke.html";
+        }
+    </script>
+    <div class="box-btn clearfix">
+        <div class="btn-r clearfix">
+            <span id="kanri_validateRegist_on">
+        <a href="javascript:void(0);" onclick="OnLinkClick();"><img alt="登録する" /></a>
+      </span>
+        </div>
+    </div>
+</body>
+
+</html>
